@@ -1,5 +1,5 @@
 import unittest
-from calculator import add
+from calculator import add, subtract
 
 class TestCalculator(unittest.TestCase):
     def test_add_positive_numbers(self):
@@ -17,6 +17,11 @@ class TestCalculator(unittest.TestCase):
     def test_add_zero(self):
         self.assertEqual(add(0, 5), 5)
         self.assertEqual(add(5, 0), 5)
+
+    def test_subtract(self):
+        self.assertEqual(subtract(10, 5), 5)
+        self.assertEqual(subtract(5, 10), -5)
+        self.assertEqual(subtract(0, 5), -5)
 
 if __name__ == "__main__":
     unittest.main()
